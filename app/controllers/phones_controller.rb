@@ -28,4 +28,9 @@ class PhonesController < ApplicationController
       render('phones/edit.html.erb')
     end
   end
+  def destroy
+    @phone = Phone.find(params[:id])
+    @phone.destroy
+    render('phones/destroy.html.erb')
+  end
 end
